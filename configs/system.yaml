@@ -1,0 +1,24 @@
+system:
+  project_name: "video-draft"
+  version: "0.1.0"
+  environment: "development"
+  log_level: "INFO"
+  log_format: "json"
+
+paths:
+  assets_dir: "assets"
+  outputs_dir: "outputs"
+  configs_dir: "configs"
+  cache_dir: ".cache"
+
+execution:
+  force_cpu: true
+  allow_gpu: false
+  deterministic_seed: 42
+  timeout_seconds: 300
+  resumable: true
+
+routing:
+  rules_config: "configs/routing_rules.yaml"
+  models_registry: "configs/models/registry.yaml"
+  default_fallback: "cpu-procedural-engine"

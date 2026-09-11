@@ -1,0 +1,130 @@
+{
+  "execution_id": "bench-1788803317",
+  "timestamp": "2026-09-07T17:49:06.987788+00:00",
+  "brief_id": "brief-baseline-edu-001",
+  "synthetic_mode": false,
+  "runs_requested": 3,
+  "runs_completed": 3,
+  "runs_successful": 3,
+  "runs_failed": 0,
+  "archetypes_tested": [
+    "education"
+  ],
+  "aspect_ratios_tested": [
+    "16:9"
+  ],
+  "primary_model_usage_pct": 100.0,
+  "fallback_usage_pct": 0.0,
+  "average_quality_score": 1.0,
+  "aggregate_timings": {
+    "avg_planning_sec": 0.0006,
+    "avg_routing_sec": 0.0386,
+    "avg_audio_sec": 0.8364,
+    "avg_clip_generation_sec": 1.7406,
+    "avg_clip_validation_sec": 0.0003,
+    "avg_assembly_sec": 6.5421,
+    "avg_evaluation_sec": 0.7311,
+    "avg_total_wall_clock_sec": 9.89
+  },
+  "system_info": {
+    "os": "Windows",
+    "os_release": "11",
+    "os_version": "10.0.26200",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+    "cpu_count": 12,
+    "python_version": "3.14.6",
+    "has_cuda": false,
+    "total_ram_gb": "unknown (psutil not installed)",
+    "available_ram_gb": "unknown (psutil not installed)"
+  },
+  "runs": [
+    {
+      "run_index": 1,
+      "brief_id": "brief-baseline-edu-001",
+      "archetype": "education",
+      "aspect_ratio": "16:9",
+      "target_duration_sec": 20.0,
+      "reproducibility_seed": 42,
+      "success": true,
+      "error": null,
+      "stage_timings": {
+        "planning_sec": 0.0008,
+        "routing_sec": 0.0235,
+        "audio_sec": 0.6447,
+        "clip_generation_sec": 2.0292,
+        "clip_validation_sec": 0.0003,
+        "assembly_sec": 9.5294,
+        "evaluation_sec": 0.7534,
+        "total_wall_clock_sec": 12.9819
+      },
+      "num_scenes": 4,
+      "num_clips_generated": 4,
+      "selected_model": "CPU-Procedural-Fallback-Engine",
+      "fallback_used": false,
+      "fallback_model": null,
+      "output_duration_sec": 20.0,
+      "output_resolution": "1280x720",
+      "quality_score": 1.0,
+      "quality_passed": true
+    },
+    {
+      "run_index": 2,
+      "brief_id": "brief-baseline-edu-001",
+      "archetype": "education",
+      "aspect_ratio": "16:9",
+      "target_duration_sec": 20.0,
+      "reproducibility_seed": 42,
+      "success": true,
+      "error": null,
+      "stage_timings": {
+        "planning_sec": 0.0007,
+        "routing_sec": 0.0692,
+        "audio_sec": 1.236,
+        "clip_generation_sec": 1.3944,
+        "clip_validation_sec": 0.0005,
+        "assembly_sec": 5.0975,
+        "evaluation_sec": 0.755,
+        "total_wall_clock_sec": 8.5536
+      },
+      "num_scenes": 4,
+      "num_clips_generated": 4,
+      "selected_model": "CPU-Procedural-Fallback-Engine",
+      "fallback_used": false,
+      "fallback_model": null,
+      "output_duration_sec": 20.0,
+      "output_resolution": "1280x720",
+      "quality_score": 1.0,
+      "quality_passed": true
+    },
+    {
+      "run_index": 3,
+      "brief_id": "brief-baseline-edu-001",
+      "archetype": "education",
+      "aspect_ratio": "16:9",
+      "target_duration_sec": 20.0,
+      "reproducibility_seed": 42,
+      "success": true,
+      "error": null,
+      "stage_timings": {
+        "planning_sec": 0.0002,
+        "routing_sec": 0.023,
+        "audio_sec": 0.6284,
+        "clip_generation_sec": 1.7983,
+        "clip_validation_sec": 0.0001,
+        "assembly_sec": 4.9994,
+        "evaluation_sec": 0.6849,
+        "total_wall_clock_sec": 8.1346
+      },
+      "num_scenes": 4,
+      "num_clips_generated": 4,
+      "selected_model": "CPU-Procedural-Fallback-Engine",
+      "fallback_used": false,
+      "fallback_model": null,
+      "output_duration_sec": 20.0,
+      "output_resolution": "1280x720",
+      "quality_score": 1.0,
+      "quality_passed": true
+    }
+  ]
+}

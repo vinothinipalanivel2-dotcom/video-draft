@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "brief_id": "brief-baseline-edu-001",
+  "total_duration_sec": 20.0,
+  "fps": 30,
+  "resolution": {
+    "width": 1280,
+    "height": 720
+  },
+  "video_tracks": [
+    {
+      "scene_id": "scene_01",
+      "scene_index": 1,
+      "prompt": "Introduction to Gravitational Waves - Scene 1: Hook & Problem Statement. Visual depiction: In 1916, Albert Einstein predicted ripples in the fabric of spacetime known as g... Style: clear schematic overview, establishing focal subject, educational documentary aesthetic, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "start_sec": 0.0,
+      "end_sec": 4.4,
+      "duration_sec": 4.4,
+      "asset_path": "submission\\artifacts\\clips\\scene_01_cpu_procedural_engine.mp4",
+      "asset_hash": "9e843eee6353a383ea4de774348d06e7adad4200c4094b70e2a16d068be0ab80",
+      "generator_model": "cpu_procedural_engine",
+      "transition_in": "fade",
+      "transition_out": "dissolve"
+    },
+    {
+      "scene_id": "scene_02",
+      "scene_index": 2,
+      "prompt": "Introduction to Gravitational Waves - Scene 2: Core Analytical Concept. Visual depiction: A century later,... Style: detailed anatomical or technical diagram, high clarity, clean studio illumination, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "start_sec": 4.4,
+      "end_sec": 10.8,
+      "duration_sec": 6.4,
+      "asset_path": "submission\\artifacts\\clips\\scene_02_cpu_procedural_engine.mp4",
+      "asset_hash": "5fbcdd88c16fba15230f9f5ba387db6ec089e169fc8625472079a20f61f2bfcd",
+      "generator_model": "cpu_procedural_engine",
+      "transition_in": "dissolve",
+      "transition_out": "dissolve"
+    },
+    {
+      "scene_id": "scene_03",
+      "scene_index": 3,
+      "prompt": "Introduction to Gravitational Waves - Scene 3: Practical Demonstration & Evidence. Visual depiction: LIGO observed ripples caused by two colliding black holes.... Style: observable phenomenon in action, real-world context, measured motion dynamics, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "start_sec": 10.8,
+      "end_sec": 16.0,
+      "duration_sec": 5.2,
+      "asset_path": "submission\\artifacts\\clips\\scene_03_cpu_procedural_engine.mp4",
+      "asset_hash": "fc9210b770bb15b4785f45ea131dfe4bbaa198f33c121dec8712343563e38eab",
+      "generator_model": "cpu_procedural_engine",
+      "transition_in": "dissolve",
+      "transition_out": "dissolve"
+    },
+    {
+      "scene_id": "scene_04",
+      "scene_index": 4,
+      "prompt": "Introduction to Gravitational Waves - Scene 4: Summary & Key Takeaway. Visual depiction: This discovery opened a brand new window to study the invisible universe.... Style: synthesized visual conclusion, memorable visual emblem, quiet confident framing, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "start_sec": 16.0,
+      "end_sec": 20.0,
+      "duration_sec": 4.0,
+      "asset_path": "submission\\artifacts\\clips\\scene_04_cpu_procedural_engine.mp4",
+      "asset_hash": "44db4c2ee9ca4d1f13748eeb4b1029d923468b73d7e97e96fdab34677a4b0e55",
+      "generator_model": "cpu_procedural_engine",
+      "transition_in": "dissolve",
+      "transition_out": "fade"
+    }
+  ],
+  "audio_tracks": [
+    {
+      "track_id": "master_narration",
+      "asset_path": "submission\\artifacts\\audio\\master_narration.wav",
+      "start_sec": 0.0,
+      "duration_sec": 20.0,
+      "volume": 1.0
+    }
+  ],
+  "subtitle_tracks": []
+}

@@ -1,0 +1,234 @@
+version: "1.1.0"
+updated_at: "2026-09-06"
+description: "Model capability registry for open-source and open-weight draft video generation"
+
+models:
+  wan2_1_t2v_1_3b:
+    model_id: "wan2_1_t2v_1_3b"
+    model_name: "Wan2.1-T2V-1.3B"
+    checkpoint: "Wan-AI/Wan2.1-T2V-1.3B"
+    revision: "main"
+    repository: "https://github.com/Wan-Video/Wan2.1"
+    license: "Apache-2.0"
+    commercial_use: true
+    generation_type: "text-to-video"
+    supported_aspect_ratios: ["16:9", "9:16", "1:1"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 5.0
+    supported_resolutions: ["480p", "720p", "832x480", "480x832"]
+    hardware_requirements:
+      requires_gpu: true
+      min_vram_gb: 8.0
+      recommended_vram_gb: 12.0
+      min_ram_gb: 16.0
+    estimated_vram_gb: 8.5
+    parameter_count: "1.3B"
+    controllability: 0.82
+    style_strengths: ["motion-dynamics", "cinematic", "photorealism"]
+    use_case_fit:
+      education: 0.82
+      news: 0.80
+      product: 0.88
+    expected_latency: 65.0
+    reliability: 0.88
+    availability: true
+    limitations:
+      - "5-second maximum clip window"
+      - "Requires offloading on consumer 8GB VRAM"
+      - "Moderate memory footprint"
+    source_urls:
+      - "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B"
+      - "https://github.com/Wan-Video/Wan2.1"
+    evidence_status: "reported"
+
+  cogvideox_2b:
+    model_id: "cogvideox_2b"
+    model_name: "CogVideoX-2B"
+    checkpoint: "THUDM/CogVideoX-2b"
+    revision: "v1.0"
+    repository: "https://github.com/THUDM/CogVideo"
+    license: "Apache-2.0"
+    commercial_use: true
+    generation_type: "text-to-video"
+    supported_aspect_ratios: ["16:9", "9:16"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 6.0
+    supported_resolutions: ["720p", "720x480", "480x720"]
+    hardware_requirements:
+      requires_gpu: true
+      min_vram_gb: 10.0
+      recommended_vram_gb: 16.0
+      min_ram_gb: 16.0
+    estimated_vram_gb: 11.0
+    parameter_count: "2.0B"
+    controllability: 0.84
+    style_strengths: ["fluid-motion", "cinematic-lighting", "high-framerate"]
+    use_case_fit:
+      education: 0.85
+      news: 0.78
+      product: 0.86
+    expected_latency: 55.0
+    reliability: 0.86
+    availability: true
+    limitations:
+      - "High GPU memory bandwidth requirement"
+      - "Fixed 48fps token cadence"
+      - "Requires sequential generation"
+    source_urls:
+      - "https://huggingface.co/THUDM/CogVideoX-2b"
+      - "https://github.com/THUDM/CogVideo"
+    evidence_status: "reported"
+
+  ltx_video:
+    model_id: "ltx_video"
+    model_name: "LTX-Video-0.9.1"
+    checkpoint: "Lightricks/LTX-Video"
+    revision: "v0.9.1"
+    repository: "https://github.com/Lightricks/LTX-Video"
+    license: "OpenRAIL"
+    commercial_use: true
+    generation_type: "text-to-video"
+    supported_aspect_ratios: ["16:9", "9:16"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 5.0
+    supported_resolutions: ["720p", "768x512", "512x768"]
+    hardware_requirements:
+      requires_gpu: true
+      min_vram_gb: 12.0
+      recommended_vram_gb: 16.0
+      min_ram_gb: 16.0
+    estimated_vram_gb: 12.5
+    parameter_count: "2.0B"
+    controllability: 0.80
+    style_strengths: ["ultra-fast-sampling", "spatial-temporal-coherence", "realistic-physics"]
+    use_case_fit:
+      education: 0.80
+      news: 0.88
+      product: 0.82
+    expected_latency: 35.0
+    reliability: 0.84
+    availability: true
+    limitations:
+      - "Subject to OpenRAIL license restrictions"
+      - "Occasional edge artifacts during rapid panning"
+    source_urls:
+      - "https://huggingface.co/Lightricks/LTX-Video"
+      - "https://github.com/Lightricks/LTX-Video"
+    evidence_status: "reported"
+
+  hunyuan_video:
+    model_id: "hunyuan_video"
+    model_name: "HunyuanVideo"
+    checkpoint: "tencent/HunyuanVideo"
+    revision: "main"
+    repository: "https://github.com/Tencent/HunyuanVideo"
+    license: "Apache-2.0"
+    commercial_use: true
+    generation_type: "text-to-video"
+    supported_aspect_ratios: ["16:9", "9:16"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 5.0
+    supported_resolutions: ["720p", "1080p", "1280x720"]
+    hardware_requirements:
+      requires_gpu: true
+      min_vram_gb: 24.0
+      recommended_vram_gb: 40.0
+      min_ram_gb: 32.0
+    estimated_vram_gb: 26.0
+    parameter_count: "13.0B"
+    controllability: 0.90
+    style_strengths: ["photorealistic", "text-rendering", "complex-scenes"]
+    use_case_fit:
+      education: 0.92
+      news: 0.70
+      product: 0.94
+    expected_latency: 150.0
+    reliability: 0.90
+    availability: false
+    limitations:
+      - "Prohibitive VRAM for standard free tiers (24GB+ needed)"
+      - "High generation latency"
+    source_urls:
+      - "https://huggingface.co/tencent/HunyuanVideo"
+      - "https://github.com/Tencent/HunyuanVideo"
+    evidence_status: "reported"
+
+  animatediff_v3:
+    model_id: "animatediff_v3"
+    model_name: "AnimateDiff-v3"
+    checkpoint: "guoyww/animatediff-motion-adapter-v1-5-3"
+    revision: "main"
+    repository: "https://github.com/guoyww/AnimateDiff"
+    license: "Apache-2.0"
+    commercial_use: true
+    generation_type: "text-to-video"
+    supported_aspect_ratios: ["16:9", "9:16", "1:1"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 3.5
+    supported_resolutions: ["512x512", "512x288", "288x512"]
+    hardware_requirements:
+      requires_gpu: true
+      min_vram_gb: 6.0
+      recommended_vram_gb: 8.0
+      min_ram_gb: 12.0
+    estimated_vram_gb: 6.5
+    parameter_count: "1.0B"
+    controllability: 0.75
+    style_strengths: ["stylized-motion", "low-latency", "wide-lora-ecosystem"]
+    use_case_fit:
+      education: 0.70
+      news: 0.75
+      product: 0.72
+    expected_latency: 20.0
+    reliability: 0.80
+    availability: true
+    limitations:
+      - "Lower resolution output (native 512x512)"
+      - "Short 3.5s motion window"
+      - "Occasional temporal flicker"
+    source_urls:
+      - "https://huggingface.co/guoyww/animatediff-motion-adapter-v1-5-3"
+      - "https://github.com/guoyww/AnimateDiff"
+    evidence_status: "reported"
+
+  cpu_procedural_engine:
+    model_id: "cpu_procedural_engine"
+    model_name: "CPU-Procedural-Fallback-Engine"
+    checkpoint: "local:procedural-v1"
+    revision: "v0.1.0"
+    repository: "local"
+    license: "Apache-2.0"
+    commercial_use: true
+    generation_type: "procedural-motion"
+    supported_aspect_ratios: ["16:9", "9:16", "1:1"]
+    supported_durations:
+      min_sec: 1.0
+      max_sec: 30.0
+    supported_resolutions: ["1080p", "720p", "1920x1080", "1080x1920"]
+    hardware_requirements:
+      requires_gpu: false
+      min_vram_gb: 0.0
+      recommended_vram_gb: 0.0
+      min_ram_gb: 4.0
+    estimated_vram_gb: 0.0
+    parameter_count: null
+    controllability: 0.95
+    style_strengths: ["kinetic-typography", "ken-burns-pan-zoom", "zero-defect-stability", "offline-guaranteed"]
+    use_case_fit:
+      education: 0.85
+      news: 0.85
+      product: 0.75
+    expected_latency: 2.5
+    reliability: 0.99
+    availability: true
+    limitations:
+      - "Procedural graphic motion only; not diffusion generative video"
+      - "Limited photorealism"
+    source_urls:
+      - "local://internal/procedural-engine"
+    evidence_status: "measured"

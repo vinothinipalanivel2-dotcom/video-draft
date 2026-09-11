@@ -1,0 +1,237 @@
+{
+  "route_id": "route-brief-baseline-edu-001-e7a0d527",
+  "brief_id": "brief-baseline-edu-001",
+  "input_brief_hash": "e7a0d5270d9858beac15f886fd0eaca6c4a247d1e1329d260f0281121cc7f1c1",
+  "timestamp": "2026-09-07T17:48:23.905465+00:00",
+  "registry_version": "1.1.0",
+  "routing_policy_version": "1.0.0",
+  "selected_model": "cpu_procedural_engine",
+  "selected_model_id": "cpu_procedural_engine",
+  "selected_model_name": "CPU-Procedural-Fallback-Engine",
+  "selected_score": 0.9482,
+  "is_cpu_fallback": true,
+  "rationale": "All candidate generative video models were eliminated by hard constraints. Routing to CPU procedural fallback: 'CPU-Procedural-Fallback-Engine'.",
+  "target_hardware": "cpu",
+  "candidates": [
+    {
+      "model_id": "wan2_1_t2v_1_3b",
+      "model_name": "Wan2.1-T2V-1.3B",
+      "eligible": false,
+      "score": null,
+      "score_breakdown": {},
+      "rejection_reasons": [
+        "No CUDA-capable accelerator detected on host system."
+      ]
+    },
+    {
+      "model_id": "cogvideox_2b",
+      "model_name": "CogVideoX-2B",
+      "eligible": false,
+      "score": null,
+      "score_breakdown": {},
+      "rejection_reasons": [
+        "No CUDA-capable accelerator detected on host system."
+      ]
+    },
+    {
+      "model_id": "ltx_video",
+      "model_name": "LTX-Video-0.9.1",
+      "eligible": false,
+      "score": null,
+      "score_breakdown": {},
+      "rejection_reasons": [
+        "No CUDA-capable accelerator detected on host system."
+      ]
+    },
+    {
+      "model_id": "hunyuan_video",
+      "model_name": "HunyuanVideo",
+      "eligible": false,
+      "score": null,
+      "score_breakdown": {},
+      "rejection_reasons": [
+        "Model 'hunyuan_video' is marked unavailable in target environment.",
+        "No CUDA-capable accelerator detected on host system.",
+        "Expected latency (150.0s) exceeds brief budget (120.0s)."
+      ]
+    },
+    {
+      "model_id": "animatediff_v3",
+      "model_name": "AnimateDiff-v3",
+      "eligible": false,
+      "score": null,
+      "score_breakdown": {},
+      "rejection_reasons": [
+        "No CUDA-capable accelerator detected on host system."
+      ]
+    },
+    {
+      "model_id": "cpu_procedural_engine",
+      "model_name": "CPU-Procedural-Fallback-Engine",
+      "eligible": true,
+      "score": 0.9482,
+      "score_breakdown": {
+        "quality": 0.97,
+        "use_case_fit": 0.85,
+        "controllability": 0.95,
+        "hardware_fit": 0.95,
+        "latency": 0.9844,
+        "reliability": 0.99,
+        "aspect_ratio_fit": 1.0,
+        "duration_fit": 1.0
+      },
+      "rejection_reasons": []
+    }
+  ],
+  "candidate_scores": {
+    "cpu_procedural_engine": 0.9482
+  },
+  "hard_constraint_results": {
+    "wan2_1_t2v_1_3b": false,
+    "cogvideox_2b": false,
+    "ltx_video": false,
+    "hunyuan_video": false,
+    "animatediff_v3": false,
+    "cpu_procedural_engine": true
+  },
+  "rejection_reasons": {
+    "wan2_1_t2v_1_3b": [
+      "No CUDA-capable accelerator detected on host system."
+    ],
+    "cogvideox_2b": [
+      "No CUDA-capable accelerator detected on host system."
+    ],
+    "ltx_video": [
+      "No CUDA-capable accelerator detected on host system."
+    ],
+    "hunyuan_video": [
+      "Model 'hunyuan_video' is marked unavailable in target environment.",
+      "No CUDA-capable accelerator detected on host system.",
+      "Expected latency (150.0s) exceeds brief budget (120.0s)."
+    ],
+    "animatediff_v3": [
+      "No CUDA-capable accelerator detected on host system."
+    ],
+    "cpu_procedural_engine": []
+  },
+  "fallback_model": "cpu_procedural_engine",
+  "fallback_reason": "Emergency fallback triggered due to complete generative model elimination.",
+  "fallback": {
+    "fallback_model": "cpu_procedural_engine",
+    "fallback_model_name": "CPU-Procedural-Fallback-Engine",
+    "fallback_reason": "Emergency fallback triggered due to complete generative model elimination."
+  },
+  "fallback_chain": [
+    "cpu_procedural_engine"
+  ],
+  "retry_policy": {
+    "max_retries": 2,
+    "backoff_sec": 0.05,
+    "enable_fallback_chain": true
+  },
+  "scene_durations_evaluated": null,
+  "routing_weights": {
+    "controllability": 0.25,
+    "use_case_fit": 0.2,
+    "reliability": 0.15,
+    "quality": 0.15,
+    "aspect_ratio_fit": 0.1,
+    "duration_fit": 0.05,
+    "hardware_fit": 0.05,
+    "latency": 0.05
+  },
+  "system_capabilities": {
+    "os": "Windows",
+    "os_release": "11",
+    "os_version": "10.0.26200",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+    "cpu_count": 12,
+    "python_version": "3.14.6",
+    "has_cuda": false,
+    "total_ram_gb": "unknown (psutil not installed)",
+    "available_ram_gb": "unknown (psutil not installed)"
+  },
+  "scores": {
+    "wan2_1_t2v_1_3b": {
+      "model_id": "wan2_1_t2v_1_3b",
+      "model_name": "Wan2.1-T2V-1.3B",
+      "total_score": 0.0,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 1.0,
+      "motion_score": 1.0,
+      "license_score": 1.0,
+      "latency_penalty": 0.0,
+      "eligible": false,
+      "disqualification_reason": "No CUDA-capable accelerator detected on host system."
+    },
+    "cogvideox_2b": {
+      "model_id": "cogvideox_2b",
+      "model_name": "CogVideoX-2B",
+      "total_score": 0.0,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 1.0,
+      "motion_score": 1.0,
+      "license_score": 1.0,
+      "latency_penalty": 0.0,
+      "eligible": false,
+      "disqualification_reason": "No CUDA-capable accelerator detected on host system."
+    },
+    "ltx_video": {
+      "model_id": "ltx_video",
+      "model_name": "LTX-Video-0.9.1",
+      "total_score": 0.0,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 1.0,
+      "motion_score": 1.0,
+      "license_score": 1.0,
+      "latency_penalty": 0.0,
+      "eligible": false,
+      "disqualification_reason": "No CUDA-capable accelerator detected on host system."
+    },
+    "hunyuan_video": {
+      "model_id": "hunyuan_video",
+      "model_name": "HunyuanVideo",
+      "total_score": 0.0,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 1.0,
+      "motion_score": 1.0,
+      "license_score": 1.0,
+      "latency_penalty": 0.0,
+      "eligible": false,
+      "disqualification_reason": "Model 'hunyuan_video' is marked unavailable in target environment.; No CUDA-capable accelerator detected on host system.; Expected latency (150.0s) exceeds brief budget (120.0s)."
+    },
+    "animatediff_v3": {
+      "model_id": "animatediff_v3",
+      "model_name": "AnimateDiff-v3",
+      "total_score": 0.0,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 1.0,
+      "motion_score": 1.0,
+      "license_score": 1.0,
+      "latency_penalty": 0.0,
+      "eligible": false,
+      "disqualification_reason": "No CUDA-capable accelerator detected on host system."
+    },
+    "cpu_procedural_engine": {
+      "model_id": "cpu_procedural_engine",
+      "model_name": "CPU-Procedural-Fallback-Engine",
+      "total_score": 0.9482,
+      "aspect_ratio_match": 1.0,
+      "vram_score": 0.95,
+      "motion_score": 0.97,
+      "license_score": 1.0,
+      "latency_penalty": 0.0156,
+      "eligible": true,
+      "disqualification_reason": null
+    }
+  },
+  "considered_models": [
+    "wan2_1_t2v_1_3b",
+    "cogvideox_2b",
+    "ltx_video",
+    "hunyuan_video",
+    "animatediff_v3",
+    "cpu_procedural_engine"
+  ]
+}

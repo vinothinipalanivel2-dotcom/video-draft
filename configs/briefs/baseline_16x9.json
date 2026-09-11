@@ -1,0 +1,20 @@
+{
+  "id": "brief-baseline-edu-001",
+  "title": "Introduction to Gravitational Waves",
+  "genre": "education",
+  "aspect_ratio": "16:9",
+  "target_duration_sec": 20.0,
+  "seed": 42,
+  "script": "In 1916, Albert Einstein predicted ripples in the fabric of spacetime known as gravitational waves. A century later, LIGO observed ripples caused by two colliding black holes. This discovery opened a brand new window to study the invisible universe.",
+  "constraints": {
+    "max_latency_sec": 120.0,
+    "max_vram_gb": 0.0,
+    "allow_cpu_fallback": true,
+    "quality_tier": "draft"
+  },
+  "metadata": {
+    "author": "SASTRA 2027 Candidate",
+    "created_at": "2026-09-06T12:00:00Z",
+    "intended_audience": "undergraduate_physics"
+  }
+}

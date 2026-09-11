@@ -1,0 +1,54 @@
+version: "1.0.0"
+description: "Configurable scoring weights and policies for draft video capability routing"
+
+weights:
+  default:
+    quality: 0.25
+    use_case_fit: 0.20
+    controllability: 0.15
+    hardware_fit: 0.10
+    latency: 0.10
+    reliability: 0.10
+    aspect_ratio_fit: 0.05
+    duration_fit: 0.05
+
+  use_cases:
+    education:
+      controllability: 0.25
+      use_case_fit: 0.20
+      reliability: 0.15
+      quality: 0.15
+      aspect_ratio_fit: 0.10
+      duration_fit: 0.05
+      hardware_fit: 0.05
+      latency: 0.05
+
+    news:
+      latency: 0.25
+      reliability: 0.20
+      use_case_fit: 0.20
+      quality: 0.10
+      controllability: 0.10
+      duration_fit: 0.05
+      hardware_fit: 0.05
+      aspect_ratio_fit: 0.05
+
+    product:
+      quality: 0.30
+      use_case_fit: 0.20
+      aspect_ratio_fit: 0.15
+      controllability: 0.15
+      reliability: 0.10
+      duration_fit: 0.05
+      hardware_fit: 0.03
+      latency: 0.02
+
+hard_constraints:
+  require_commercial_use: false
+  strict_hardware: true
+  max_acceptable_latency_sec: null
+  require_open_license: true
+
+fallback:
+  default_fallback_model: "cpu_procedural_engine"
+  always_allow_cpu_fallback: true

@@ -1,0 +1,3 @@
+# CPU runtime dependencies (offline orchestration, fallback & audio synthesis)
+-r requirements.txt
+psutil>=5.9.0

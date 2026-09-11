@@ -1,0 +1,8 @@
+{
+  "id": "brief-invalid-001",
+  "title": "Invalid Brief Duration Too Short",
+  "genre": "unknown_genre",
+  "aspect_ratio": "4:3",
+  "target_duration_sec": 5.0,
+  "script": ""
+}

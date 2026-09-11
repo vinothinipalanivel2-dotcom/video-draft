@@ -1,0 +1,275 @@
+﻿import json
+from pathlib import Path
+
+notebook = {
+    "nbformat": 4,
+    "nbformat_minor": 2,
+    "metadata": {
+        "colab": {
+            "name": "video_draft_colab.ipynb",
+            "provenance": []
+        },
+        "kernelspec": {
+            "display_name": "Python 3",
+            "name": "python3"
+        },
+        "language_info": {
+            "name": "python"
+        }
+    },
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# IncuBrix Track 03: Open-Source Draft Video Generation and Model Routing\n",
+                "### Interactive Execution & Evaluation Notebook (Google Colab / Kaggle / Local CPU Host)\n",
+                "\n",
+                "This notebook demonstrates the end-to-end open-source draft video generation system:\n",
+                "1. **Capability Registry & Routing**: Evaluates 5 open-weight models with fallback chains.\n",
+                "2. **Deterministic Scene Planning**: Generates pacing, beats, and visual prompts for Education, News, and Product archetypes.\n",
+                "3. **Audio & Subtitle Synthesis**: Generates narration and synchronized SRT / WebVTT timed captions.\n",
+                "4. **Reliable Clip Generation**: Demonstrates synthesis with controlled retries and CPU procedural fallback.\n",
+                "5. **FFmpeg Timeline Assembly**: Produces broadcast-standard 16:9 and 9:16 MP4 video drafts.\n",
+                "6. **Objective Quality Gate**: Validates stream integrity, decodability, duration precision, and cross-artifact contracts.\n",
+                "7. **Cryptographic Provenance**: Generates SHA-256 asset manifests conforming to assessment requirements."
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 1. Environment Inspection & Setup\n",
+                "Verify runtime hardware, Python version, and FFmpeg installation."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "import sys\n",
+                "import os\n",
+                "import platform\n",
+                "import shutil\n",
+                "\n",
+                "print(f\"Python Version: {sys.version}\")\n",
+                "print(f\"Platform:       {platform.system()} {platform.machine()}\")\n",
+                "\n",
+                "# Check FFmpeg\n",
+                "ffmpeg_bin = shutil.which(\"ffmpeg\")\n",
+                "print(f\"FFmpeg Binary:  {ffmpeg_bin or 'Missing - run apt-get install ffmpeg'}\")\n",
+                "if not ffmpeg_bin and platform.system() == 'Linux':\n",
+                "    !apt-get update -qq && apt-get install -y -qq ffmpeg"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 2. Package Installation\n",
+                "Install dependencies and import the core `video_draft` package."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "!pip install -q click pydantic pyyaml soundfile numpy Pillow pytest\n",
+                "import video_draft\n",
+                "print(f\"video_draft loaded from: {video_draft.__file__}\")"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 3. Creative Brief Loading & Inspection\n",
+                "Load a standardized Creative Brief defining genre, aspect ratio, duration, and script."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "from pathlib import Path\n",
+                "import json\n",
+                "from video_draft.schema.brief import CreativeBrief\n",
+                "\n",
+                "brief_file = Path(\"configs/briefs/baseline_16x9.json\")\n",
+                "if brief_file.is_file():\n",
+                "    brief = CreativeBrief(**json.loads(brief_file.read_text(encoding='utf-8')))\n",
+                "else:\n",
+                "    # Fallback to in-memory definition\n",
+                "    from video_draft.schema.brief import SystemConstraints\n",
+                "    brief = CreativeBrief(\n",
+                "        id=\"brief-colab-demo\",\n",
+                "        title=\"Cellular Mitosis Explainer\",\n",
+                "        genre=\"education\",\n",
+                "        aspect_ratio=\"16:9\",\n",
+                "        target_duration_sec=16.0,\n",
+                "        script=\"Mitosis is cell division where chromosomes replicate and divide.\",\n",
+                "        seed=42,\n",
+                "        constraints=SystemConstraints(max_vram_gb=16.0, allow_cpu_fallback=True, quality_tier='draft'),\n",
+                "    )\n",
+                "\n",
+                "print(f\"Loaded Brief: {brief.id} ({brief.title})\")\n",
+                "print(f\"Genre: {brief.genre} | Aspect Ratio: {brief.aspect_ratio} | Duration: {brief.target_duration_sec}s\")"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 4. Capability-Based Routing Engine\n",
+                "Evaluate open-source video models and compute explainable ranking with deterministic tie-breaking."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "from video_draft.router.router import route\n",
+                "\n",
+                "decision = route(creative_brief=brief, force_cpu=True)\n",
+                "print(f\"Selected Model:   {decision.selected_model_name} (ID: {decision.selected_model})\")\n",
+                "print(f\"Target Hardware:  {decision.target_hardware.upper()}\")\n",
+                "print(f\"Selection Score:  {decision.selected_score:.4f}\")\n",
+                "print(f\"Fallback Chain:   {' -> '.join(decision.fallback_chain)}\")\n",
+                "print(f\"Rationale:        {decision.rationale}\")"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 5. Deterministic Scene Planning\n",
+                "Decompose creative brief into structured scene beats with pacing tempo and visual prompt guidance."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "from video_draft.planner.scene_planner import ScenePlanner\n",
+                "\n",
+                "planner = ScenePlanner()\n",
+                "plan = planner.plan(brief)\n",
+                "print(f\"Plan ID:          {plan.plan_id}\")\n",
+                "print(f\"Strategy:         {plan.strategy_name} ({plan.genre})\")\n",
+                "print(f\"Planned Duration: {plan.planned_duration_sec:.2f}s across {len(plan.scenes)} beats\n\")\n",
+                "for s in plan.scenes:\n",
+                "    print(f\"  [Scene {s.scene_index}] {s.start_sec:.1f}s - {s.end_sec:.1f}s: {s.title}\")\n",
+                "    print(f\"     Visual Prompt: {s.visual_prompt[:65]}...\")"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 6. End-to-End Pipeline Run\n",
+                "Execute synthesis, audio muxing, subtitle creation, and timeline assembly via CLI."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "!video-draft run --brief configs/briefs/baseline_16x9.json --output-dir outputs/colab_run --mock"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 7. Inspect Quality Gate Scorecard\n",
+                "Evaluate stream probe, bitstream decodability, duration precision, and cross-artifact consistency."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "!video-draft evaluate --manifest outputs/colab_run/manifest.json"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 8. Inspect Generated Captions (.srt)\n",
+                "View the timed SubRip caption cues generated directly from the scene plan."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "srt_file = Path(\"outputs/colab_run/captions.srt\")\n",
+                "if srt_file.is_file():\n",
+                "    print(srt_file.read_text(encoding='utf-8'))\n",
+                "else:\n",
+                "    print(\"Captions not found. Run cell 6 first.\")"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 9. In-Notebook Video Playback\n",
+                "Render the assembled draft MP4 video directly within the notebook."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "from IPython.display import Video, display\n",
+                "vid_path = \"outputs/colab_run/final_draft.mp4\"\n",
+                "if os.path.exists(vid_path):\n",
+                "    display(Video(vid_path, embed=True, width=640))\n",
+                "else:\n",
+                "    print(\"Video file not found at:\", vid_path)"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## 10. Run Automated Pipeline Benchmark\n",
+                "Measure stage-by-stage latencies and test synthetic reliability across archetypes."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "!video-draft benchmark --runs 3 --synthetic"
+            ]
+        }
+    ]
+}
+
+target = Path("notebooks/video_draft_colab.ipynb")
+target.parent.mkdir(parents=True, exist_ok=True)
+target.write_text(json.dumps(notebook, indent=2), encoding="utf-8")
+print(f"Generated {target} ({target.stat().st_size} bytes)")

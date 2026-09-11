@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-draft"
+version = "0.1.0"
+description = "Open-Source Draft Video Generation and Model Routing - IncuBrix Track 03 Baseline System"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Vinothini P", email = "candidate@incubrix.local" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = [
+    "click>=8.1.0",
+    "pydantic>=2.5.0",
+    "pyyaml>=6.0.0",
+    "imageio-ffmpeg>=0.5.0",
+]
+
+[project.optional-dependencies]
+cpu = [
+    "psutil>=5.9.0",
+    "edge-tts>=6.1.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+]
+
+[project.scripts]
+video-draft = "video_draft.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --import-mode=importlib"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "src",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/video_draft"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

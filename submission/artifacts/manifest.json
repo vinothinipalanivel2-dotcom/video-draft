@@ -1,0 +1,34 @@
+{
+  "execution_id": "exec-brief-baseline-edu-001-1788803310",
+  "brief_id": "brief-baseline-edu-001",
+  "timestamp": "2026-09-07T17:48:30.457382+00:00",
+  "output_mp4": "submission\\artifacts\\final_draft.mp4",
+  "output_mp4_sha256": "97ea5d0deabbca54d1913fdfd265a73efa3354499fce7755a2d7a27e620b5368",
+  "timeline_json": "submission\\artifacts\\timeline.json",
+  "route_decision_json": "submission\\artifacts\\route_decision.json",
+  "captions_srt": "submission\\artifacts\\captions.srt",
+  "models_used": [
+    {
+      "model_id": "cpu_procedural_engine",
+      "model_name": "CPU-Procedural-Fallback-Engine",
+      "checkpoint": "hf.co/cpu_procedural_engine",
+      "revision": "main",
+      "license": "Apache-2.0",
+      "commercial_use": true,
+      "execution_environment": "cpu"
+    }
+  ],
+  "asset_hashes": {
+    "output_mp4": "97ea5d0deabbca54d1913fdfd265a73efa3354499fce7755a2d7a27e620b5368",
+    "timeline_json": "ab3f93104d918a4b26b1be63feaeea05480f7728e1fd816262974f6748508ce1",
+    "route_decision_json": "cc6c78b573aff717c1027349ec2a328d4909f268822261b9e55cf1847c97f3bc",
+    "captions_srt": "4b86369f31ed275eec4c9238f74cb3401330c4777a03dc5f18ffc6a891d98acf",
+    "scene_plan_json": "4264b267c06a883c7feb2a53b21a56a766d2d7fd44c3aa865f7882839639e3d2",
+    "master_narration_wav": "9ba75cecb2c4a5131fb19252eca188845f45afab8676f47147d9b693859a6589",
+    "scene_01_cpu_procedural_engine.mp4": "9e843eee6353a383ea4de774348d06e7adad4200c4094b70e2a16d068be0ab80",
+    "scene_02_cpu_procedural_engine.mp4": "5fbcdd88c16fba15230f9f5ba387db6ec089e169fc8625472079a20f61f2bfcd",
+    "scene_03_cpu_procedural_engine.mp4": "fc9210b770bb15b4785f45ea131dfe4bbaa198f33c121dec8712343563e38eab",
+    "scene_04_cpu_procedural_engine.mp4": "44db4c2ee9ca4d1f13748eeb4b1029d923468b73d7e97e96fdab34677a4b0e55"
+  },
+  "reproducibility_seed": 42
+}

@@ -1,0 +1,14 @@
+﻿{
+  "id": "brief-baseline-news-001",
+  "title": "Breakthrough in Fusion Energy",
+  "genre": "news",
+  "aspect_ratio": "16:9",
+  "target_duration_sec": 18.0,
+  "seed": 202,
+  "script": "Breaking news: Scientists achieve net energy gain in nuclear fusion experiment. The milestone could pave the way for limitless clean energy. Global reactions and future steps are already underway.",
+  "constraints": {
+    "max_vram_gb": 16.0,
+    "allow_cpu_fallback": true,
+    "quality_tier": "draft"
+  }
+}

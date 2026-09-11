@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-09-10T18:52:34.346250+00:00",
+  "overall_passed": true,
+  "total_checks": 7,
+  "passed_checks": 7,
+  "failed_checks": 0,
+  "checks": {
+    "documentation_presence": {
+      "dimension": "documentation_presence",
+      "passed": true,
+      "score": 1.0,
+      "message": "All 6 required submission markdown documents present",
+      "details": {
+        "missing": [],
+        "required": [
+          "README.md",
+          "architecture.md",
+          "requirements_traceability.md",
+          "benchmark_summary.md",
+          "reproducibility.md",
+          "model_governance.md"
+        ]
+      }
+    },
+    "artifacts_presence": {
+      "dimension": "artifacts_presence",
+      "passed": true,
+      "score": 1.0,
+      "message": "All 8 required pipeline artifacts present",
+      "details": {
+        "missing": [],
+        "required": [
+          "final_draft.mp4",
+          "timeline.json",
+          "scene_plan.json",
+          "route_decision.json",
+          "manifest.json",
+          "evaluation_report.json",
+          "benchmark_report.json",
+          "captions.srt"
+        ]
+      }
+    },
+    "json_artifacts_validity": {
+      "dimension": "json_artifacts_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "All JSON artifacts are well-formed and valid",
+      "details": {
+        "issues": []
+      }
+    },
+    "final_mp4_integrity": {
+      "dimension": "final_mp4_integrity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Final MP4 probed successfully and stream is playable/decodable",
+      "details": {
+        "duration": 20.0,
+        "resolution": "1280x720",
+        "codec": "h264",
+        "has_audio": true,
+        "decodable": true
+      }
+    },
+    "manifest_hash_resolution": {
+      "dimension": "manifest_hash_resolution",
+      "passed": true,
+      "score": 1.0,
+      "message": "All manifest SHA-256 hashes resolve to existing matching files",
+      "details": {
+        "mismatches": []
+      }
+    },
+    "colab_notebook_validity": {
+      "dimension": "colab_notebook_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Interactive Colab/Kaggle notebook exists and parses",
+      "details": {
+        "path": "notebooks\\video_draft_colab.ipynb",
+        "valid": true
+      }
+    },
+    "security_and_secrets_clean": {
+      "dimension": "security_and_secrets_clean",
+      "passed": true,
+      "score": 1.0,
+      "message": "No API keys, passwords, or credentials detected in repository",
+      "details": {
+        "findings": []
+      }
+    }
+  },
+  "discovered_artifacts": [
+    "benchmark_report.json",
+    "captions.srt",
+    "captions.vtt",
+    "evaluation_report.json",
+    "final_draft.mp4",
+    "manifest.json",
+    "route_decision.json",
+    "scene_plan.json",
+    "timeline.json"
+  ],
+  "security_clean": true,
+  "issues": []
+}

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / temporary files
+*.log
+tmp/
+temp/
+cache/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Large model/checkpoint files
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.bin
+
+# Generated runtime/cache data
+__pycache__/
+outputs/cache/
+outputs/

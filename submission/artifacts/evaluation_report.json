@@ -1,0 +1,216 @@
+{
+  "evaluation_id": "eval-brief-baseline-edu-001-1788803310",
+  "timestamp": "2026-09-07T17:48:30.494556+00:00",
+  "brief_id": "brief-baseline-edu-001",
+  "overall_passed": true,
+  "overall_score": 1.0,
+  "checks": {
+    "planning_validity": {
+      "dimension": "planning_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Plan decomposed into 4 beats (20.00s, EducationStrategy)",
+      "details": {
+        "strategy": "EducationStrategy",
+        "scene_count": 4,
+        "planned_duration": 20.0
+      }
+    },
+    "routing_validity": {
+      "dimension": "routing_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Model 'CPU-Procedural-Fallback-Engine' routed to CPU",
+      "details": {
+        "selected_model": "cpu_procedural_engine",
+        "target_hardware": "cpu",
+        "fallback_model": "cpu_procedural_engine"
+      }
+    },
+    "generation_success": {
+      "dimension": "generation_success",
+      "passed": true,
+      "score": 1.0,
+      "message": "Generated 4/4 scene clip artifacts",
+      "details": {
+        "expected_clips": 4,
+        "generated_clips": 4
+      }
+    },
+    "clip_validity": {
+      "dimension": "clip_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "All 4 clip artifacts verified with valid hashes and geometry",
+      "details": {
+        "validated_clip_count": 4
+      }
+    },
+    "final_media_validity": {
+      "dimension": "final_media_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Final MP4 stream and bitstream validation passed",
+      "details": {
+        "file_path": "submission\\artifacts\\final_draft.mp4",
+        "file_exists": true,
+        "file_size_bytes": 394618,
+        "is_valid": true,
+        "duration_sec": 20.0,
+        "duration_expected": 20.0,
+        "duration_valid": true,
+        "width": 1280,
+        "height": 720,
+        "resolution_valid": true,
+        "aspect_ratio": "16:9",
+        "aspect_ratio_valid": true,
+        "fps": 30.0,
+        "fps_valid": true,
+        "video_codec": "h264",
+        "codec_valid": true,
+        "has_audio": true,
+        "audio_valid": true,
+        "is_decodable": true,
+        "issues": []
+      }
+    },
+    "timing_accuracy": {
+      "dimension": "timing_accuracy",
+      "passed": true,
+      "score": 1.0,
+      "message": "Duration drift: 0.00s (tolerance: 0.50s)",
+      "details": {
+        "actual_sec": 20.0,
+        "planned_sec": 20.0,
+        "drift_sec": 0.0
+      }
+    },
+    "audio_alignment": {
+      "dimension": "audio_alignment",
+      "passed": true,
+      "score": 1.0,
+      "message": "Audio track present and synchronized",
+      "details": {
+        "has_audio": true,
+        "audio_file": "submission\\artifacts\\audio\\master_narration.wav"
+      }
+    },
+    "assembly_validity": {
+      "dimension": "assembly_validity",
+      "passed": true,
+      "score": 1.0,
+      "message": "Timeline assembly completed with 4 video tracks",
+      "details": {
+        "timeline_tracks": 4,
+        "output_video": "submission\\artifacts\\final_draft.mp4"
+      }
+    },
+    "cross_consistency": {
+      "dimension": "cross_consistency",
+      "passed": true,
+      "score": 1.0,
+      "message": "All cross-artifact contracts aligned",
+      "details": {
+        "is_consistent": true,
+        "scene_count_match": true,
+        "scene_ids_match": true,
+        "scene_ordering_valid": true,
+        "duration_alignment_valid": true,
+        "audio_alignment_valid": true,
+        "timeline_continuity_valid": true,
+        "aspect_ratio_consistent": true,
+        "provenance_consistent": true,
+        "issues": [],
+        "details": {
+          "scene_counts": {
+            "plan": 4,
+            "clips": 4,
+            "timeline": 4
+          },
+          "durations": {
+            "plan_sec": 20.0,
+            "clips_total_sec": 20.0,
+            "timeline_sec": 20.0,
+            "video_sec": 20.0
+          },
+          "audio_sec": 20.0,
+          "clip_provenance": [
+            "cpu_procedural_engine",
+            "cpu_procedural_engine",
+            "cpu_procedural_engine",
+            "cpu_procedural_engine"
+          ]
+        }
+      }
+    },
+    "fallback_usage": {
+      "dimension": "fallback_usage",
+      "passed": true,
+      "score": 1.0,
+      "message": "Fallback used: True (Model: cpu_procedural_engine)",
+      "details": {
+        "fallback_occurred": true,
+        "selected_model": "cpu_procedural_engine"
+      }
+    }
+  },
+  "media_validation": {
+    "file_path": "submission\\artifacts\\final_draft.mp4",
+    "file_exists": true,
+    "file_size_bytes": 394618,
+    "is_valid": true,
+    "duration_sec": 20.0,
+    "duration_expected": 20.0,
+    "duration_valid": true,
+    "width": 1280,
+    "height": 720,
+    "resolution_valid": true,
+    "aspect_ratio": "16:9",
+    "aspect_ratio_valid": true,
+    "fps": 30.0,
+    "fps_valid": true,
+    "video_codec": "h264",
+    "codec_valid": true,
+    "has_audio": true,
+    "audio_valid": true,
+    "is_decodable": true,
+    "issues": []
+  },
+  "consistency": {
+    "is_consistent": true,
+    "scene_count_match": true,
+    "scene_ids_match": true,
+    "scene_ordering_valid": true,
+    "duration_alignment_valid": true,
+    "audio_alignment_valid": true,
+    "timeline_continuity_valid": true,
+    "aspect_ratio_consistent": true,
+    "provenance_consistent": true,
+    "issues": [],
+    "details": {
+      "scene_counts": {
+        "plan": 4,
+        "clips": 4,
+        "timeline": 4
+      },
+      "durations": {
+        "plan_sec": 20.0,
+        "clips_total_sec": 20.0,
+        "timeline_sec": 20.0,
+        "video_sec": 20.0
+      },
+      "audio_sec": 20.0,
+      "clip_provenance": [
+        "cpu_procedural_engine",
+        "cpu_procedural_engine",
+        "cpu_procedural_engine",
+        "cpu_procedural_engine"
+      ]
+    }
+  },
+  "summary": "Quality Gate PASSED (10/10 checks passed, score: 1.0000)",
+  "reproducibility_verified": true,
+  "fallback_used": true,
+  "final_video_path": "submission\\artifacts\\final_draft.mp4",
+  "manifest_path": "submission\\artifacts\\manifest.json"
+}

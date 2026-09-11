@@ -1,0 +1,96 @@
+{
+  "plan_id": "plan-brief-baseline-edu-001-e7a0d527",
+  "brief_id": "brief-baseline-edu-001",
+  "genre": "education",
+  "aspect_ratio": "16:9",
+  "target_duration_sec": 20.0,
+  "planned_duration_sec": 20.0,
+  "strategy_name": "EducationStrategy",
+  "pacing_tempo": "slow_didactic",
+  "caption_treatment": "explanatory_lower_third",
+  "visual_strategy": "diagrammatic_didactic",
+  "scenes": [
+    {
+      "scene_id": "scene_01",
+      "scene_index": 1,
+      "title": "Hook & Problem Statement",
+      "beat_type": "intro_problem",
+      "narration_chunk": "In 1916, Albert Einstein predicted ripples in the fabric of spacetime known as gravitational waves.",
+      "visual_prompt": "Introduction to Gravitational Waves - Scene 1: Hook & Problem Statement. Visual depiction: In 1916, Albert Einstein predicted ripples in the fabric of spacetime known as g... Style: clear schematic overview, establishing focal subject, educational documentary aesthetic, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "duration_sec": 4.4,
+      "start_sec": 0.0,
+      "end_sec": 4.4,
+      "transition_in": "fade",
+      "transition_out": "dissolve",
+      "overlay_text": "[OVERVIEW] Hook & Problem Statement",
+      "camera_motion": "slow_push_in",
+      "metadata": {
+        "archetype": "education",
+        "pedagogical_role": "intro_problem",
+        "aspect_ratio": "16:9"
+      }
+    },
+    {
+      "scene_id": "scene_02",
+      "scene_index": 2,
+      "title": "Core Analytical Concept",
+      "beat_type": "core_breakdown",
+      "narration_chunk": "A century later,",
+      "visual_prompt": "Introduction to Gravitational Waves - Scene 2: Core Analytical Concept. Visual depiction: A century later,... Style: detailed anatomical or technical diagram, high clarity, clean studio illumination, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "duration_sec": 6.4,
+      "start_sec": 4.4,
+      "end_sec": 10.8,
+      "transition_in": "dissolve",
+      "transition_out": "dissolve",
+      "overlay_text": "[KEY CONCEPT] Core Analytical Concept",
+      "camera_motion": "steady_pan",
+      "metadata": {
+        "archetype": "education",
+        "pedagogical_role": "core_breakdown",
+        "aspect_ratio": "16:9"
+      }
+    },
+    {
+      "scene_id": "scene_03",
+      "scene_index": 3,
+      "title": "Practical Demonstration & Evidence",
+      "beat_type": "demonstration",
+      "narration_chunk": "LIGO observed ripples caused by two colliding black holes.",
+      "visual_prompt": "Introduction to Gravitational Waves - Scene 3: Practical Demonstration & Evidence. Visual depiction: LIGO observed ripples caused by two colliding black holes.... Style: observable phenomenon in action, real-world context, measured motion dynamics, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "duration_sec": 5.2,
+      "start_sec": 10.8,
+      "end_sec": 16.0,
+      "transition_in": "dissolve",
+      "transition_out": "dissolve",
+      "overlay_text": "[ANALYSIS] Practical Demonstration & Evidence",
+      "camera_motion": "slow_track_right",
+      "metadata": {
+        "archetype": "education",
+        "pedagogical_role": "demonstration",
+        "aspect_ratio": "16:9"
+      }
+    },
+    {
+      "scene_id": "scene_04",
+      "scene_index": 4,
+      "title": "Summary & Key Takeaway",
+      "beat_type": "summary_takeaway",
+      "narration_chunk": "This discovery opened a brand new window to study the invisible universe.",
+      "visual_prompt": "Introduction to Gravitational Waves - Scene 4: Summary & Key Takeaway. Visual depiction: This discovery opened a brand new window to study the invisible universe.... Style: synthesized visual conclusion, memorable visual emblem, quiet confident framing, wide cinematic framing 16:9, high clarity, didactic visual focus.",
+      "duration_sec": 4.0,
+      "start_sec": 16.0,
+      "end_sec": 20.0,
+      "transition_in": "dissolve",
+      "transition_out": "fade",
+      "overlay_text": "[SUMMARY] Summary & Key Takeaway",
+      "camera_motion": "slow_pull_back",
+      "metadata": {
+        "archetype": "education",
+        "pedagogical_role": "summary_takeaway",
+        "aspect_ratio": "16:9"
+      }
+    }
+  ],
+  "input_brief_hash": "e7a0d5270d9858beac15f886fd0eaca6c4a247d1e1329d260f0281121cc7f1c1",
+  "created_at": "2026-09-07T17:48:23.912929+00:00"
+}
